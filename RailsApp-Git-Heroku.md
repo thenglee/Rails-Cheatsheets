@@ -188,3 +188,14 @@ However, if you want to use **PostgreSQL** database in your development and test
 10. See your deployed app in production
    * `$ heroku open`
    * Alternatively, you can visit the address you saw when you ran `heroku apps:create sample_app`
+
+----------------------------------------------------------
+#### References
+- [JumpstartLab - Contact Manager](http://tutorials.jumpstartlab.com/projects/contact_manager.html)
+- [Michael Hartl Rails Tutorial Chapter 1](https://www.railstutorial.org/book/beginning#cha-beginning)
+- [Tealeaf Academy Blog - How to Install PostgreSQL for Mac OS X](http://www.gotealeaf.com/blog/how-to-install-postgresql-on-a-mac)
+- [Heroku Rails 4 Asset Pipeline - Serve assets](https://devcenter.heroku.com/articles/rails-4-asset-pipeline#serve-assets)
+- [Jay Lee - Heroku: Missing secret_token and secret_key_base for ‘production’](http://jaylee.com/heroku-missing-secret_toekn-and-secret_key_base-for-production/)
+- [Stackoverflow - How to solve error “Missing 'secret_key_base'...](http://stackoverflow.com/questions/23180650/how-to-solve-error-missing-secret-key-base-for-production-environment-on-h)
+- [Heroku - Setting up config vars for a deployed application](https://devcenter.heroku.com/articles/config-vars#setting-up-config-vars-for-a-deployed-application)
+
