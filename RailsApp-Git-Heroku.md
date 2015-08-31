@@ -24,23 +24,23 @@ Below are the steps to create a new rails app using Git as version source contro
   $ git init
   ```
 * Add **_secrets.yml_** to **_.gitignore_** 
-  * Go to your **_.gitignore_** file and add in the following line
+  * Go to your **_.gitignore_** file and add in the following line:
      ```
      /config/secrets.yml
      ```
-* Check files to be added to *staging area*
+* Check files to be added to *staging area*:
     ```
     $ git status
     ```
-* Add all files to *staging area*
+* Add all files to *staging area*:
    ```
    $ git add -A
    ```
-* Verify files in the *staging area*
+* Verify files in the *staging area*:
    ```
    $ git status
    ```
-* Commit files to git repository
+* Commit files to git repository:
   ```
   $ git commit -m "Initial commit"
   ```
@@ -66,9 +66,11 @@ However, if you want to use **PostgreSQL** database in your development and test
           gem 'pg'
         end
         ```
+
       * **PostgreSQL database**
+
         ```
-        # Use PostgreSQL as the database for ActiveRecord
+        # Use PostgreSQL as the database for ActiveRecord 
         gem 'pg', ~> 0.18.2
         ```
 2. Serve static assets
@@ -77,9 +79,10 @@ However, if you want to use **PostgreSQL** database in your development and test
      config.server_static_assets = true
      ```
    * Alternatively, you can include the *rails_12factor* gem in your **_Gemfile_**:
-     ```
-     gem 'rails_12factor', group: :production
-     ```
+   
+        ```
+         gem 'rails_12factor', group: :production
+        ```
 3. Run `$ bundle install`
 4. Configure and create your local database (for local PostgreSQL database only)
     
