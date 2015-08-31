@@ -154,17 +154,37 @@ However, if you want to use **PostgreSQL** database in your development and test
     ```
     $ heroku apps:create sample_app
     ```
-7. Deploy to Heroku
+7. Setup SECRET_KEY_BASE environment variable in Heroku
+   * Go to **_config/environments/production.rb_** and add the line:
+
+
+     ```
+     config.secret_key_base = ENV["SECRET_KEY_BASE"]
+     ```
+       
+    This tells your app to set the secret_key_base using the environment variable instead of looking for it in *config/secrets.yml*
+
+   * Generate the secret key in your console for use later in the next step:
+
+     ```
+     $ rake secret
+     ```
+   * Setup config vars for your app
+
+     ```
+     $ heroku config:set SECRET_KEY_BASE=...secret key here...
+     ```
+
+8. Deploy to Heroku
 
     ```
     $ git push heroku master
     ```
-8. Run data migrations (if any) on Heroku
+9. Run data migrations (if any) on Heroku
 
     ```
     $ heroku run rake db:migrate --app sample_app
     ```
-
-9. See your deployed app in production
+10. See your deployed app in production
    * `$ heroku open`
    * Alternatively, you can visit the address you saw when you ran `heroku apps:create sample_app`
