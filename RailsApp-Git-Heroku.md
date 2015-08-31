@@ -10,16 +10,20 @@ Below are the steps to create a new rails app using Git as version source contro
 #### Step 1: Create new rails app
 
 * Create a new rails project:
+
   ```
   $ rails new sample_app
   ```
 * Go to the project root directory:
+
   ```
   $ cd sample_app
   ```
+
 #### Step 2: Setup Git repository
 
 * Create a new repository
+
   ```
   $ git init
   ```
@@ -60,6 +64,7 @@ However, if you want to use **PostgreSQL** database in your development and test
 1. Update the **_Gemfile_**
     * Update your **_Gemfile_** based on the **database** you are using for your **development and test environments**:
       * **SQLite3 database (Rails default)**
+
         ```
         group :development, :test do
           ...other gems...
@@ -80,6 +85,7 @@ However, if you want to use **PostgreSQL** database in your development and test
         ```
 2. Serve static assets
    * Go to **_config/application.rb_** and add this line: 
+     
      ```
      config.server_static_assets = true
      ```
@@ -93,38 +99,40 @@ However, if you want to use **PostgreSQL** database in your development and test
     
     **Note**: Skip this step and go to step 5 if you are **not** using PostgreSQL in your development and test environments.
    * Update **_config/database.yml_** to the following:
+
      ```
      #   Ensure the PostgreSQL gem is defined in your Gemfile
      #   gem 'pg'
      
      development:
-       adapter: postgresql
-       encoding: unicode
-       database: sample_app_dev
-       pool: 5
-       username: your_username
-       password:
+        adapter: postgresql
+        encoding: unicode
+        database: sample_app_dev
+        pool: 5
+        username: your_username
+        password:
 
      # Warning: The database defined as "test" will be erased and
      # re-generated from your development database when you run "rake".
      # Do not set this db to the same as development or production
 
      test:
-       adapter: postgresql
-       encoding: unicode
-       database: sample_app_test
-       pool: 5
-       username: your_username
-       password:
+        adapter: postgresql
+        encoding: unicode
+        database: sample_app_test
+        pool: 5
+        username: your_username
+        password:
 
      production:
-       adapter: postgresql
-       host: localhost
-       port: 5432
-       database: sample_app_production
+        adapter: postgresql
+        host: localhost
+        port: 5432
+        database: sample_app_production
      ```
      
    * Create the local database
+
       ```
       $ rake db:create
       ```
@@ -156,6 +164,7 @@ However, if you want to use **PostgreSQL** database in your development and test
     ```
     $ heroku run rake db:migrate --app sample_app
     ```
+
 9. See your deployed app in production
    * `$ heroku open`
    * Alternatively, you can visit the address you saw when you ran `heroku apps:create sample_app`
