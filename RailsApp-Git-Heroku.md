@@ -25,25 +25,26 @@ Below are the steps to create a new rails app using Git as version source contro
   ```
 * Add **_secrets.yml_** to **_.gitignore_** 
   * Go to your **_.gitignore_** file and add in the following line
-    ```
-    /config/secrets.yml
-    ```
+     ```
+     /config/secrets.yml
+     ```
 * Check files to be added to *staging area*
-  ```
-  $ git status
-  ```
+    ```
+    $ git status
+    ```
 * Add all files to *staging area*
-  ```
-  $ git add -A
-  ```
+   ```
+   $ git add -A
+   ```
 * Verify files in the *staging area*
-  ```
-  $ git status
-  ```
+   ```
+   $ git status
+   ```
 * Commit files to git repository
   ```
   $ git commit -m "Initial commit"
   ```
+
 #### Step 3: Setup Heroku
 **Note**: Setting up PostgreSQL database locally is optional and you can proceed with the following steps below if you want to continue to use the local default database (SQLite3) provided by Rails.
 
@@ -123,25 +124,25 @@ However, if you want to use **PostgreSQL** database in your development and test
     
    **Info**: SSH keys only need to be added once to your Heroku account for your local machine. You can check if the SHH keys has already been added by running `$ heroku keys`
    * Login to Heroku
-     ```
-     $ heroku login
-     ```
+      ```
+      $ heroku login
+      ```
    * Add SSH keys
-     ```
-     $ heroku keys:add
-     ```
+      ```
+      $ heroku keys:add
+      ```
 6. Create your app on Heroku
-   ```
-   $ heroku apps:create sample_app
-   ```
+    ```
+    $ heroku apps:create sample_app
+    ```
 7. Deploy to Heroku
-   ```
-   $ git push heroku master
-   ```
+    ```
+    $ git push heroku master
+    ```
 8. Run data migrations (if any) on Heroku
-   ```
-   $ heroku run rake db:migrate --app sample_app
-   ```
+    ```
+    $ heroku run rake db:migrate --app sample_app
+    ```
 9. See your deployed app in production
    * `$ heroku open`
    * Alternatively, you can visit the address you saw when you ran `heroku apps:create sample_app`
