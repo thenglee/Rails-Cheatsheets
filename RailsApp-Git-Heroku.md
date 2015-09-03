@@ -83,17 +83,13 @@ However, if you want to use **PostgreSQL** database in your development and test
         # Use PostgreSQL as the database for ActiveRecord 
         gem 'pg', ~> 0.18.2
         ```
-2. Serve static assets
-   * Go to **_config/application.rb_** and add this line: 
-     
-     ```
-     config.server_static_assets = true
-     ```
-   * Alternatively, you can include the *rails_12factor* gem in your **_Gemfile_**:
+2. Add *rails_12factor* gem
+  
+   * Include the *rails_12factor* gem in your **_Gemfile_**:
 
-        ```
-         gem 'rails_12factor', group: :production
-        ```
+      ```
+      gem 'rails_12factor', group: :production
+      ```
 3. Run `$ bundle install`
 4. Configure and create your local database (for local PostgreSQL database only)
     
