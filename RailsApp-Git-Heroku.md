@@ -78,10 +78,17 @@ However, if you want to use **PostgreSQL** database in your development and test
         ```
 
       * **PostgreSQL database**
+        
+        *Replace these lines*
+        ```
+        # Use sqlite3 as the database for Active Record
+        gem 'sqlite3'
+        ```
+        *with*
 
         ```
-        # Use PostgreSQL as the database for ActiveRecord 
-        gem 'pg', ~> 0.18.2
+        # Use PostgreSQL as the database for Active Record 
+        gem 'pg', '~>0.18.2'
         ```
 2. Add *rails_12factor* gem
   
@@ -148,7 +155,7 @@ However, if you want to use **PostgreSQL** database in your development and test
 6. Create your app on Heroku
 
     ```
-    $ heroku apps:create sample_app
+    $ heroku apps:create sample-app
     ```
 7. Setup SECRET_KEY_BASE environment variable in Heroku
    * Go to **_config/environments/production.rb_** and add the line:
@@ -170,20 +177,26 @@ However, if you want to use **PostgreSQL** database in your development and test
      ```
      $ heroku config:set SECRET_KEY_BASE=...secret key here...
      ```
+8. Add files to staging area and issue commit to git:
 
-8. Deploy to Heroku
+   ```
+   $ git add -A
+   $ git commit -m "Setup app for Heroku"
+   ```
+
+9. Deploy to Heroku
 
     ```
     $ git push heroku master
     ```
-9. Run data migrations (if any) on Heroku
+10. Run data migrations (if any) on Heroku
 
     ```
-    $ heroku run rake db:migrate --app sample_app
+    $ heroku run rake db:migrate --app sample-app
     ```
-10. See your deployed app in production
+11. See your deployed app in production
    * `$ heroku open`
-   * Alternatively, you can visit the address you saw when you ran `heroku apps:create sample_app`
+   * Alternatively, you can visit the address you saw when you ran `heroku apps:create sample-app`
 
 ----------------------------------------------------------
 #### References
