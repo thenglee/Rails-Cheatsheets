@@ -12,6 +12,7 @@
 
 ### Git commands
 - `git remote`: list the set of tracked repositories
+- `git remote -v`: see remote URL after remote name
 - `git remote add heroku https://git.heroku.com/sample-app.git`: adds a remote named <name> for the repository at <url>
 - `git remote show heroku`: shows information about the remote
 - `git add .` or `git add -A`: Add all the files in your current directory
